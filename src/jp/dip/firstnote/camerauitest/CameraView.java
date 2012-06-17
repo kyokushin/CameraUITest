@@ -29,6 +29,7 @@ public class CameraView implements SurfaceHolder.Callback{
 		mCam.setPreviewCallback(new PreviewCallback(){
 
 			public void onPreviewFrame(byte[] data, Camera camera) {
+				
 				if( mFrame == null
 						|| mFrame.length != data.length ){
 					mFrame = new byte[data.length];
@@ -44,8 +45,13 @@ public class CameraView implements SurfaceHolder.Callback{
 		
 	}
 	
-	public byte[] getFrame(){
-		return mFrame;
+	public void  getFrame( byte[] frame ){
+		synchronized( mFrame ){
+			for( int i=0; i<mFrame.length; i++){
+				frame[i] = mFrame[i];
+			}
+		}
+		
 	}
 	public int getWidth(){
 		return mOptimalSize.width;
