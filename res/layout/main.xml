@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- <SurfaceView -->
+    <jp.dip.firstnote.camerauitest.DrawSurfaceView
+        android:id="@+id/overray"
+       	android:layout_width="fill_parent"
+       	android:layout_height="fill_parent"
+       	android:theme="@android:style/Theme.Translucent"
+        />
+    <SurfaceView
+        android:id="@+id/cam_view"
+        android:layout_width="fill_parent"
+   	    android:layout_height="fill_parent"
+        />
+    <LinearLayout
+        android:id="@+id/UILayout"
+       	android:layout_width="fill_parent"
+       	android:layout_height="fill_parent"
+	    android:orientation="vertical"
+ 	    >
+ 	    <TextView
+ 	        android:id="@+id/debug_text"
+	       	android:layout_width="fill_parent"
+	       	android:layout_height="wrap_content"
+	       	android:text="@string/hello"
+ 	        />
+ 	    <Button 
+ 	        android:id="@+id/start_button"
+	       	android:layout_width="wrap_content"
+	       	android:layout_height="wrap_content"
+	       	android:text="@string/start"
+	       	android:textSize="12sp"
+ 	        />
+    
+ 	    </LinearLayout>
+</FrameLayout>
